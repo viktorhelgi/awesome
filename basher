@@ -1,0 +1,7 @@
+#!/bin/bash
+
+
+# list all files in the directory (NOT directories)
+# /usr/share/X11/xkb/symbols
+
+files=$(fd -t f -d 1 -e txt -e xkb -e symbols /usr/share/X11/xkb/symbols)
