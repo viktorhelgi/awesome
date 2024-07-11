@@ -527,18 +527,19 @@ globalkeys = my_table.join(
 		awful.util.spawn("nitrogen --restore")
 	end, { description = "Wallpaper favorite", group = "altkey" }),
 
-	awful.key({ altkey }, "Left", function()
-		awful.util.spawn("variety -p")
-	end, { description = "Wallpaper previous", group = "altkey" }),
-	awful.key({ altkey }, "Right", function()
-		awful.util.spawn("variety -n")
-	end, { description = "Wallpaper next", group = "altkey" }),
-	awful.key({ altkey }, "Up", function()
-		awful.util.spawn("variety --pause")
-	end, { description = "Wallpaper pause", group = "altkey" }),
-	awful.key({ altkey }, "Down", function()
-		awful.util.spawn("variety --resume")
-	end, { description = "Wallpaper resume", group = "altkey" }),
+	-- awful.key({ altkey }, "Left", function()
+	-- 	awful.util.spawn("variety -p")
+	-- end, { description = "Wallpaper previous", group = "altkey" }),
+	-- awful.key({ altkey }, "Right", function()
+	-- 	awful.util.spawn("variety -n")
+	-- end, { description = "Wallpaper next", group = "altkey" }),
+	-- awful.key({ altkey }, "Up", function()
+	-- 	awful.util.spawn("variety --pause")
+	-- end, { description = "Wallpaper pause", group = "altkey" }),
+	-- awful.key({ altkey }, "Down", function()
+	-- 	awful.util.spawn("variety --resume")
+	-- end, { description = "Wallpaper resume", group = "altkey" }),
+
 	awful.key({ altkey }, "F2", function()
 		awful.util.spawn("xfce4-appfinder --collapsed")
 	end, { description = "Xfce appfinder", group = "altkey" }),
@@ -870,34 +871,36 @@ globalkeys = my_table.join(
 		awful.util.spawn("amixer set Master 3%-")
 	end, { description = "decrease volume", group = "Audio" }),
 
-	-- MPD control
-	awful.key({ ctrlkey, shiftkey }, "Up", function()
-		os.execute("mpc toggle")
-		beautiful.mpd.update()
-	end, { description = "mpc toggle", group = "widgets" }),
-	awful.key({ ctrlkey, shiftkey }, "Down", function()
-		os.execute("mpc stop")
-		beautiful.mpd.update()
-	end, { description = "mpc stop", group = "widgets" }),
-	awful.key({ ctrlkey, shiftkey }, "Left", function()
-		os.execute("mpc prev")
-		beautiful.mpd.update()
-	end, { description = "mpc prev", group = "widgets" }),
-	awful.key({ ctrlkey, shiftkey }, "Right", function()
-		os.execute("mpc next")
-		beautiful.mpd.update()
-	end, { description = "mpc next", group = "widgets" }),
-	awful.key({ ctrlkey, shiftkey }, "s", function()
-		local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
-		if beautiful.mpd.timer.started then
-			beautiful.mpd.timer:stop()
-			common.text = common.text .. lain.util.markup.bold("OFF")
-		else
-			beautiful.mpd.timer:start()
-			common.text = common.text .. lain.util.markup.bold("ON")
-		end
-		naughty.notify(common)
-	end, { description = "mpc on/off", group = "widgets" }),
+    -- This doesn't work!
+    --
+	-- -- MPD control
+	-- awful.key({ ctrlkey, shiftkey }, "Up", function()
+	-- 	os.execute("mpc toggle")
+	-- 	beautiful.mpd.update()
+	-- end, { description = "mpc toggle", group = "widgets" }),
+	-- awful.key({ ctrlkey, shiftkey }, "Down", function()
+	-- 	os.execute("mpc stop")
+	-- 	beautiful.mpd.update()
+	-- end, { description = "mpc stop", group = "widgets" }),
+	-- awful.key({ ctrlkey, shiftkey }, "Left", function()
+	-- 	os.execute("mpc prev")
+	-- 	beautiful.mpd.update()
+	-- end, { description = "mpc prev", group = "widgets" }),
+	-- awful.key({ ctrlkey, shiftkey }, "Right", function()
+	-- 	os.execute("mpc next")
+	-- 	beautiful.mpd.update()
+	-- end, { description = "mpc next", group = "widgets" }),
+	-- awful.key({ ctrlkey, shiftkey }, "s", function()
+	-- 	local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
+	-- 	if beautiful.mpd.timer.started then
+	-- 		beautiful.mpd.timer:stop()
+	-- 		common.text = common.text .. lain.util.markup.bold("OFF")
+	-- 	else
+	-- 		beautiful.mpd.timer:start()
+	-- 		common.text = common.text .. lain.util.markup.bold("ON")
+	-- 	end
+	-- 	naughty.notify(common)
+	-- end, { description = "mpc on/off", group = "widgets" }),
 
 	-- Copy primary to clipboard (terminals to gtk)
 	--awful.key({ modkey }, "c", function () awful.spawn.with_shell("xsel | xsel -i -b") end,
