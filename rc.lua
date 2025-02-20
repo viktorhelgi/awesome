@@ -480,18 +480,12 @@ globalkeys = my_table.join(
 	awful.key({ ctrlkey, altkey }, "s", function()
 		awful.util.spawn(mediaplayer)
 	end, { description = mediaplayer, group = "alt+ctrl" }),
-	awful.key({ ctrlkey, altkey }, "t", function()
-		awful.util.spawn(terminal)
-	end, { description = terminal, group = "alt+ctrl" }),
 	awful.key({ ctrlkey, altkey }, "u", function()
 		awful.util.spawn("pavucontrol")
 	end, { description = "pulseaudio control", group = "alt+ctrl" }),
 	awful.key({ ctrlkey, altkey }, "v", function()
 		awful.util.spawn(browser1)
 	end, { description = browser1, group = "alt+ctrl" }),
-	awful.key({ ctrlkey, altkey }, "Return", function()
-		awful.util.spawn(terminal)
-	end, { description = terminal, group = "alt+ctrl" }),
 	awful.key({ ctrlkey, altkey }, "m", function()
 		awful.util.spawn("xfce4-settings-manager")
 	end, { description = "Xfce settings manager", group = "alt+ctrl" }),
@@ -749,9 +743,6 @@ globalkeys = my_table.join(
 	end, { description = "delete tag", group = "tag" }),
 
 	-- Standard program
-	awful.key({ modkey }, "Return", function()
-		awful.spawn(terminal)
-	end, { description = terminal, group = "super" }),
 	awful.key({ modkey, shiftkey }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	-- awful.key({ modkey, shiftkey   }, "x", awesome.quit,
 	--          {description = "quit awesome", group = "awesome"}),
@@ -859,9 +850,6 @@ globalkeys = my_table.join(
 	awful.key({ modkey }, "F8", function()
 		awful.util.spawn(mediaplayer)
 	end, { description = mediaplayer, group = "Audio" }),
-
-	awful.key({ modkey }, "F9", function()
-	end, { description = "remmina ", group = "Audio" }),
 
 	awful.key({ modkey }, "Page_Up", function()
 		awful.util.spawn("amixer set Master 3%+")
