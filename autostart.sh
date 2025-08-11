@@ -10,6 +10,7 @@ function run {
 run xset r rate 180 35
 
 # Location /usr/share/X11/xkb/symbols/A-real-prog-dvorak
+# ~/.config/my-keyboards/A-real-prog-dvorak
 run setxkbmap A-real-prog-dvorak -option altwin:swap_alt_win
 
 # run /usr/bin/alacritty
